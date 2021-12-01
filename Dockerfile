@@ -3,6 +3,9 @@ LABEL maintainer="Eirik Habbestad"
 ENV container=docker
 
 ENV pip_packages "ansible"
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN yum -y update; yum clean all; \

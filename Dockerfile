@@ -5,6 +5,7 @@ ENV container=docker
 ENV pip_packages "ansible"
 RUN echo "LANG=en_US.utf-8" >> /etc/environment \ 
 echo "LC_ALL=en_US.utf-8" >> /etc/environment \
+echo "PYTHONIOENCODING=UTF-8" >> /etc/environment \
 source /etc/environment
 
 

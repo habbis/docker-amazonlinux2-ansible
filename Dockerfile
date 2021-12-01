@@ -1,5 +1,5 @@
 FROM centos:7
-LABEL maintainer="Jeff Geerling"
+LABEL maintainer="Eirik Habbestad"
 ENV container=docker
 
 ENV pip_packages "ansible"
@@ -22,14 +22,14 @@ RUN yum makecache fast \
  && yum -y install \
       sudo \
       which \
-      python-pip \
+      python3-pip \
  && yum clean all
 
 # Upgrade Pip so cryptography package works.
-RUN python -m pip install --upgrade pip==20.3.4
+RUN python3 -m pip install --upgrade pip==20.3.4
 
 # Install Ansible via Pip.
-RUN pip install $pip_packages
+RUN pip3 install $pip_packages
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers

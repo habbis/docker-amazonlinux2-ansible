@@ -3,8 +3,8 @@ LABEL maintainer="Eirik Habbestad"
 ENV container=docker
 
 ENV pip_packages "ansible"
-RUN echo "LANG=C.UTF-8" >> /etc/environment \ 
-echo "LC_ALL=C.UTF-8" >> /etc/environment \
+RUN echo "LANG=en_US.utf-8" >> /etc/environment \ 
+echo "LC_ALL=en_US.utf-8" >> /etc/environment \
 source /etc/environment
 
 

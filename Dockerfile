@@ -4,7 +4,8 @@ ENV container=docker
 
 ENV pip_packages "ansible"
 RUN echo "LANG=C.UTF-8" >> /etc/environment \ 
-echo "LC_ALL=C.UTF-8" >> /etc/environment
+echo "LC_ALL=C.UTF-8" >> /etc/environment \
+source /etc/environment
 
 
 # Install systemd -- See https://hub.docker.com/_/centos/

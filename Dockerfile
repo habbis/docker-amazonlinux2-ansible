@@ -3,10 +3,10 @@ LABEL maintainer="Eirik Habbestad"
 ENV container=docker
 
 ENV pip_packages "ansible"
-RUN echo "LANG=en_US.utf-8" >> /etc/profile \ 
-echo "LC_ALL=en_US.utf-8" >> /etc/profile \
-echo "PYTHONIOENCODING=UTF-8" >> /etc/profile \
-source /etc/profile
+RUN export LC_ALL="en_US.utf-8" \  
+export LC_ALL="en_US.utf-8" \
+export LC_CTYPE="en_US.utf-8" \
+export PYTHONIOENCODING="UTF-8"
 
 
 # Install systemd -- See https://hub.docker.com/_/centos/

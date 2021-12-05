@@ -8,6 +8,9 @@ export LC_ALL="en_US.utf-8" \
 export LC_CTYPE="en_US.utf-8" \
 export PYTHONIOENCODING="UTF-8"
 
+# Fix potential UTF-8 errors with ansible-test.
+RUN locale-gen en_US.UTF-8
+
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN yum -y update; yum clean all; \

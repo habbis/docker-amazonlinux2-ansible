@@ -1,6 +1,6 @@
 # CentOS 7 Ansible Test Image
 
-[![CI](https://github.com/habbis/docker-centos7-ansible/workflows/Build/badge.svg?branch=main&event=push)](https://github.com/habbis/docker-centos7-ansible) [![Docker pulls](https://img.shields.io/docker/pulls/habbis/docker-centos7-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/habbis0/docker-centos7-ansible/)
+[![CI](https://github.com/habbis/docker-centos7-ansible/workflows/Build/badge.svg?branch=main&event=push)](https://github.com/habbis/docker-centos7-ansible) [![Docker pulls](https://img.shields.io/docker/pulls/habbis0/docker-centos7-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/habbis0/docker-centos7-ansible/)
 
 CentOS 7 Docker container for Ansible playbook and role testing.
 

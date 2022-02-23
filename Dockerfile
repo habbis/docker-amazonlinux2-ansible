@@ -3,14 +3,10 @@ LABEL maintainer="Eirik Habbestad"
 ENV container=docker
 
 ENV pip_packages "ansible"
-RUN export LC_ALL="en_US.utf-8" \  
-export LC_ALL="en_US.utf-8" \
-export LC_CTYPE="en_US.utf-8" \
-export PYTHONIOENCODING="UTF-8"
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+ENV LC_CTYPE en_US.UTF-8
 
-# Fix potential UTF-8 errors with ansible-test.
-#RUN locale-gen en_US.UTF-8
-RUN localectl set-locale LANG=en_US.UTF-8
 
 
 # Install systemd -- See https://hub.docker.com/_/centos/
@@ -32,7 +28,13 @@ RUN yum makecache fast \
       sudo \
       which \
       python3-pip \
- && yum clean all
+      glibc-common \
+ &&  yum clean all
+
+
+# Fix potential UTF-8 errors with ansible-test.
+#RUN locale-gen en_US.UTF-8
+#RUN localectl set-locale LANG=en_US.UTF-8
 
 # Upgrade Pip so cryptography package works.
 RUN python3 -m pip install --upgrade pip
